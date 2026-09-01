@@ -99,12 +99,20 @@ rather than by policy. **Promise-returning `webRequestBlocking` handlers are the
 subresource requests are temporarily cancelled and affected tabs may be reloaded instead of requests being held until
 the filtering engine is ready.
 
+On branded Google Chrome, the packaged CRX must also be added to the machine-level `ExtensionInstallAllowlist` policy
+so Chrome does not disable it after installation. This is not needed for unbranded Chromium. The allowlist does not
+install the extension or replace the launch flag.
+
 1. Download the CRX from <https://ublock.r58playz.dev/>.
-2. Completely quit Chrome, including background processes.
-3. Launch Chrome with `--allowlisted-extension-id=blockddmmcjpfkbhanlgegpmjpfpfjka`. Chrome will show an unsupported
+2. Remove any `ExtensionInstallForcelist` entry for this extension.
+3. Add `blockddmmcjpfkbhanlgegpmjpfpfjka` to the machine-level `ExtensionInstallAllowlist` policy:
+   - Windows: in regedit, create `HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallAllowlist`, add a string value named `1` (or the next free number), and set it to the extension ID.
+   - macOS: add `ExtensionInstallAllowlist`, as an array containing only the extension ID, to `/Library/Managed Preferences/com.google.Chrome.plist`.
+4. Completely quit Chrome, including background processes, restart it, and verify the allowlist in `chrome://policy`.
+5. Launch Chrome with `--allowlisted-extension-id=blockddmmcjpfkbhanlgegpmjpfpfjka`. Chrome will show an unsupported
    command-line flag warning; do not suppress it with `--test-type`, which changes other browser behaviour.
-4. Open `chrome://extensions`, enable `Developer mode`, then drag the CRX onto the page and approve the installation.
-5. Enable `Allow User Scripts` in the extension's details page. Wait for the `!` badge to clear; reload the extension
+6. Open `chrome://extensions`, enable `Developer mode`, then drag the CRX onto the page and approve the installation.
+7. Enable `Allow User Scripts` in the extension's details page. Wait for the `!` badge to clear; reload the extension
    if it does not.
 
 The flag is what makes Chromium grant the MV3 `webRequestBlocking` permission to this extension. Chrome must be
