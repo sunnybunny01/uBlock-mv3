@@ -282,6 +282,7 @@ import µb from './background.js';
 
     for ( const key in hsDefault ) {
         if ( Object.hasOwn(hsDefault, key) === false ) { continue; }
+//        if ( Object.hasOwn(hsAdmin, name) ) { continue; } // this does not work in upstream uBlock origin because it uses `name` from globalThis
         if ( typeof hs[key] !== typeof hsDefault[key] ) { continue; }
         this.hiddenSettings[key] = hs[key];
     }
