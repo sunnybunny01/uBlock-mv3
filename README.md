@@ -163,11 +163,9 @@ If you ever want to contribute something, think about the people working hard to
 [Performance]: https://www.debugbear.com/blog/chrome-extensions-website-performance#the-impact-of-ad-blocking-on-website-performance
 [EasyPrivacy]: https://easylist.to/#easyprivacy
 [Thunderbird]: https://addons.thunderbird.net/thunderbird/addon/ublock-origin/
-[Chrome Dev]: https://chromewebstore.google.com/detail/ublock-origin-development/cgbcahbpdhpcegmbfconppldiemgcoii
 [EasyList]: https://easylist.to/#easylist
 [Mozilla]: https://addons.mozilla.org/addon/ublock-origin/
 [Crowdin]: https://crowdin.com/project/ublock
-[Chrome]: https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm
 [Reddit]: https://www.reddit.com/r/uBlockOrigin/
 [Theft]: https://x.com/LeaVerou/status/518154828166725632
 [Opera]: https://addons.opera.com/extensions/details/ublock/
