@@ -62,6 +62,9 @@ None of the restrictions described below exist on Linux, on either Chrome or Chr
 2. Write `{ "ExtensionInstallForcelist": ["blockddmmcjpfkbhanlgegpmjpfpfjka;https://ublock.r58playz.dev/update.xml"] }` into the file.
 3. Restart the browser, then enable `Allow User Scripts` in the extension's details page.
 
+For a signed CRX built from this checkout and tested entirely from local files,
+see [local policy testing](docs/local-policy-test.md).
+
 ### Windows and macOS
 
 Chrome refuses to force-install an extension from a non-Web-Store update URL unless the device has a management
